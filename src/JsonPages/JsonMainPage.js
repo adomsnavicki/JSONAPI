@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Title from "../Components/Title";
 import ContentCreator from "../Components/ContentCreator";
@@ -7,6 +8,7 @@ import ContentCreator from "../Components/ContentCreator";
 const apiURL = `http://localhost:3000/`;
 
 const JsonMainPage = () => {
+  let { id } = useParams();
   const [posts, setPosts] = useState();
   const [users, setUsers] = useState();
   const [albums, setAlbums] = useState();
@@ -20,11 +22,11 @@ const JsonMainPage = () => {
   }, []);
 
   useEffect(() => {
-    axios.get(`${apiURL}users?_limit=3`).then((users) => {
+    axios.get(`${apiURL}users?_limit=3?id=${id}`).then((users) => {
       const usersData = users.data;
       setUsers(usersData);
     });
-  }, []);
+  }, [id]);
   useEffect(() => {
     axios.get(`${apiURL}albums?_limit=10`).then((albums) => {
       const albumsData = albums.data;

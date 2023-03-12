@@ -19,6 +19,7 @@ function App() {
           <Route path="/home/" element={<JsonHomePage />} />
           <Route path="/users/" element={<JsonUsersPage />} />
           <Route path="/user/" element={<JsonUserPage />} />
+          <Route path="/user/:id" element={<JsonUserPage />} />
           <Route path="/posts/" element={<JsonPostsPage />} />
           <Route path="/albums/" element={<JsonAlbumsPage />} />
         </Routes>

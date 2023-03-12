@@ -11,7 +11,7 @@ const ContentCreator = ({ item, link }) => {
           item.length > 0 &&
           item.map((content, index) => (
             <div key={index} className="list-wrapper">
-              <Link to={link}>
+              <Link to={link + content.id}>
                 <h1 className="item-title">{content.name}</h1>
                 <img className="user-image" src={userLogo} alt="user"></img>
                 <span className="item-introduction">
