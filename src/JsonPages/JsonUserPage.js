@@ -11,6 +11,8 @@ const apiURL = `http://localhost:3000/`;
 const JsonUserPage = () => {
   let { id } = useParams();
   const [user, setUser] = useState();
+  const [userAlbums, setUserAlbums] = useState();
+  const [userAlbumsImages, setAlbumsImages] = useState();
 
   useEffect(() => {
     axios.get(`${apiURL}users?id=${id}`).then((user) => {
@@ -18,6 +20,14 @@ const JsonUserPage = () => {
       setUser(userData);
     });
   }, [id]);
+
+  useEffect(() => {
+    axios.get(`${apiURL}albumsImages?albumId=${id}`).then((user) => {
+      const userData = user.data;
+      setAlbumsImages(userData);
+    });
+  }, [id]);
+
   return (
     <div>
       {user &&
@@ -50,6 +60,15 @@ const JsonUserPage = () => {
                 <li>Profession: {user.profession}</li>
               </ul>
             </div>
+          </div>
+        ))}
+      <h1>Albums:</h1>
+      {userAlbumsImages &&
+        userAlbumsImages.length > 0 &&
+        userAlbumsImages.map((albums, index) => (
+          <div>
+            <div className="album-title">{albums.title}</div>
+            <img src={albums.url}></img>
           </div>
         ))}
     </div>
