@@ -39,6 +39,7 @@ const JsonMainPage = () => {
 
   return (
     <div>
+      <h1>TITLE</h1>
       <ContentCreator item={posts} title="Posts:" link={"/posts/"} />
       <ContentCreator item={users} title="Users:" link={"/users/"} />
       <ContentCreator item={albums} title="Albums:" link={"/albums/"} />
