@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import Title from "../Components/Title";
 
 import ContentCreator from "../Components/ContentCreator";
 const apiURL = `http://localhost:3000/`;
@@ -39,7 +40,7 @@ const JsonMainPage = () => {
 
   return (
     <div>
-      <h1>TITLE</h1>
+      <Title text="Share your moments!" />
       <ContentCreator item={posts} title="Posts:" link={"/posts/"} />
       <ContentCreator item={users} title="Users:" link={"/users/"} />
       <ContentCreator item={albums} title="Albums:" link={"/albums/"} />

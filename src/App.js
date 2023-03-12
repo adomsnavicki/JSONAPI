@@ -12,7 +12,7 @@ function App() {
     <div className="container">
       <Header />
       <Routes>
-        <Route path="/" element={<JsonMainPage />} />
+        <Route path="/JSONAPI" element={<JsonMainPage />} />
         <Route path="/home/" element={<JsonHomePage />} />
         <Route path="/users/" element={<JsonUsersPage />} />
         <Route path="/posts/" element={<JsonPostsPage />} />

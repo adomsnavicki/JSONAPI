@@ -1,9 +1,12 @@
 .main-navigation {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid red;
-
   align-items: center;
+  background-color: rgb(60, 139, 192);
+  .header-logo {
+    width: 60px;
+  }
   .nav-list {
     display: flex;
     flex-direction: row;
@@ -13,6 +16,8 @@
   }
   .nav-item {
     a {
+      padding: 20px;
+
       text-decoration: none;
       color: black;
     }

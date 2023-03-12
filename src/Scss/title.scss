@@ -1,0 +1,19 @@
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+
+  border: 1px solid black;
+  background-image: url(../Images/mainpagetitle.png);
+
+  height: 600px;
+  .title-text {
+    font-size: 50px;
+  }
+  .font-link {
+    font-family: "Dancing Script", cursive;
+  }
+  .sign-up-button {
+    width: 40px;
+    height: 40px;
+  }
+}
