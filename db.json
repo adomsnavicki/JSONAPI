@@ -478,7 +478,6 @@
     {
       "id": 1,
       "name": "Leanne Graham",
-
       "username": "Bret",
       "email": "Sincere@april.biz",
       "address": {
@@ -497,7 +496,9 @@
         "name": "Romaguera-Crona",
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
-      }
+      },
+      "profession": "Professional photographer",
+      "introduction": "Hi, I'm Leanne Graham, check out my albums! If you like it, contact me."
     },
     {
       "id": 2,
@@ -520,7 +521,9 @@
         "name": "Deckow-Crist",
         "catchPhrase": "Proactive didactic contingency",
         "bs": "synergize scalable supply-chains"
-      }
+      },
+      "profession": "Professional photographer",
+      "introduction": "Hi, I'm Ervin Howell, check out my albums! If you like it, contact me."
     },
     {
       "id": 3,
@@ -543,7 +546,9 @@
         "name": "Romaguera-Jacobson",
         "catchPhrase": "Face to face bifurcated interface",
         "bs": "e-enable strategic applications"
-      }
+      },
+      "profession": "Professional photographer",
+      "introduction": "Hi, I'm Clementine Bauch, check out my albums! If you like it, contact me."
     },
     {
       "id": 4,

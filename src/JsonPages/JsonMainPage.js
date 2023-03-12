@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import Title from "../Components/Title";
-
 import ContentCreator from "../Components/ContentCreator";
+
 const apiURL = `http://localhost:3000/`;
 
 const JsonMainPage = () => {
@@ -20,7 +20,7 @@ const JsonMainPage = () => {
   }, []);
 
   useEffect(() => {
-    axios.get(`${apiURL}users?_limit=10`).then((users) => {
+    axios.get(`${apiURL}users?_limit=3`).then((users) => {
       const usersData = users.data;
       setUsers(usersData);
     });
@@ -41,10 +41,11 @@ const JsonMainPage = () => {
   return (
     <div>
       <Title text="Share your moments!" />
-      <ContentCreator item={posts} title="Posts:" link={"/posts/"} />
-      <ContentCreator item={users} title="Users:" link={"/users/"} />
-      <ContentCreator item={albums} title="Albums:" link={"/albums/"} />
-      <ContentCreator item={comments} title="Comments:" link={"/comments/"} />
+      {/* <ContentCreator item={posts} title="Posts:" link={"/posts/"} /> */}
+      <ContentCreator item={users} link={"/user/"} />
+
+      {/* <ContentCreator item={albums} title="Albums:" link={"/albums/"} />
+      <ContentCreator item={comments} title="Comments:" link={"/comments/"} /> */}
     </div>
   );
 };

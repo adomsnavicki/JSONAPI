@@ -15,13 +15,14 @@ const Header = () => {
           <NavLink to="/home/">Home</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/users/">Users</NavLink>
+          <NavLink to="/albums/">Albums</NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/posts/">Posts</NavLink>
         </li>
+
         <li className="nav-item">
-          <NavLink to="/albums/">Albums</NavLink>
+          <NavLink to="/users/">Users</NavLink>
         </li>
       </ul>
     </nav>

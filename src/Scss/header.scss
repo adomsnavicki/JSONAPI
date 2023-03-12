@@ -1,9 +1,11 @@
 .main-navigation {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+
   align-items: center;
-  background-color: rgb(60, 139, 192);
+  background-color: rgb(155, 209, 223);
+  position: sticky;
+  top: 0;
   .header-logo {
     width: 60px;
   }
@@ -17,9 +19,17 @@
   .nav-item {
     a {
       padding: 20px;
-
       text-decoration: none;
       color: black;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    a:hover {
+      color: white;
+    }
+    a.active {
+      // background-color: rgb(110, 160, 194);
+      color: white;
     }
   }
 }

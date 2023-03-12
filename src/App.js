@@ -6,19 +6,23 @@ import Header from "./Components/Header";
 import JsonPostsPage from "./JsonPages/JsonPostsPage";
 import JsonUsersPage from "./JsonPages/JsonUsersPage";
 import JsonAlbumsPage from "./JsonPages/JsonAlbumsPage";
+import JsonUserPage from "./JsonPages/JsonUserPage";
+import "./Scss/content-wrapper.scss";
 
 function App() {
   return (
-    <div className="container">
+    <div className="content-wrapper">
       <Header />
-      <Routes>
-        <Route path="/JSONAPI" element={<JsonMainPage />} />
-        <Route path="/home/" element={<JsonHomePage />} />
-        <Route path="/users/" element={<JsonUsersPage />} />
-        <Route path="/posts/" element={<JsonPostsPage />} />
-
-        <Route path="/albums/" element={<JsonAlbumsPage />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/JSONAPI" element={<JsonMainPage />} />
+          <Route path="/home/" element={<JsonHomePage />} />
+          <Route path="/users/" element={<JsonUsersPage />} />
+          <Route path="/user/" element={<JsonUserPage />} />
+          <Route path="/posts/" element={<JsonPostsPage />} />
+          <Route path="/albums/" element={<JsonAlbumsPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }
