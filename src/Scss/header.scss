@@ -1,7 +1,6 @@
 .main-navigation {
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   background-color: rgb(155, 209, 223);
   position: sticky;
@@ -28,7 +27,6 @@
       color: white;
     }
     a.active {
-      // background-color: rgb(110, 160, 194);
       color: white;
     }
   }
