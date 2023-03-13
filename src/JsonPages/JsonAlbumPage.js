@@ -25,7 +25,7 @@ const JsonAlbumPage = () => {
       setAlbumTitle([userData]);
     });
   }, [id]);
-  console.log(albumPhotos);
+
   return (
     <div className="album-container">
       {albumTitle &&
