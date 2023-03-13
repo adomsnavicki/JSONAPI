@@ -5,18 +5,62 @@ import SignUpLogo from "../Svg/SignUpLogo.svg";
 
 import "../Scss/button.scss";
 const Button = ({ text }) => {
-  const DataObj = {
-    name: "Jonas",
-    username: "Baronas",
-    email: "15",
-    phone: "45646546",
+  let DataObj = {
+    name: "",
+    username: "",
+    email: "",
+    phone: "",
     website: "",
     profession: "",
   };
-
   const [form, setForm] = useState([]);
+  const [show, setShow] = useState(true);
+  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [website, setWebsite] = useState("");
+  const [profession, setProfession] = useState("");
+
+  const nameValue = (e) => {
+    setName(e.target.value);
+  };
+
+  const userNameValue = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const emailValue = (e) => {
+    setEmail(e.target.value);
+  };
+  const phoneValue = (e) => {
+    setPhone(e.target.value);
+  };
+  const websiteValue = (e) => {
+    setWebsite(e.target.value);
+  };
+  const professionValue = (e) => {
+    setProfession(e.target.value);
+  };
+
   const signUpHandler = () => {
     setForm([DataObj]);
+    setShow(true);
+  };
+
+  const createProfile = (e) => {
+    e.preventDefault();
+    DataObj = {
+      name: name,
+      username: userName,
+      email: email,
+      phone: phone,
+      website: website,
+      profession: profession,
+    };
+    setForm((prev) => [DataObj, ...prev]);
+
+    setShow(false);
   };
 
   return (
@@ -31,39 +75,80 @@ const Button = ({ text }) => {
         form.length > 0 &&
         form.map((formData, index) => (
           <div key={index}>
-            <form className="register-form">
-              <button className="close-form-button">X</button>
-              <img
-                className="sign-up-logo"
-                src={SignUpLogo}
-                alt="form-logo"
-              ></img>
-              <div className="form-control">
-                <label className="contact-name">Name:</label>
-                <input className="text-input" type="text"></input>
-              </div>
-              <div className="form-control">
-                <label className="contact-name">Username:</label>
-                <input className="text-input" type="text"></input>
-              </div>
-              <div className="form-control">
-                <label className="contact-name">Email:</label>
-                <input className="text-input" type="text"></input>
-              </div>
-              <div className="form-control">
-                <label className="contact-name">Phone:</label>
-                <input className="text-input" type="text"></input>
-              </div>
-              <div className="form-control">
-                <label className="contact-name">Website:</label>
-                <input className="text-input" type="text"></input>
-              </div>
-              <div className="form-control">
-                <label className="contact-name">Profession:</label>
-                <input className="text-input" type="text"></input>
-              </div>
-              <input className="create-button" type="submit" />
-            </form>
+            {show ? (
+              <form className="register-form" onSubmit={createProfile}>
+                <button
+                  onClick={() => setShow(!show)}
+                  className="close-form-button"
+                >
+                  X
+                </button>
+                <img
+                  className="sign-up-logo"
+                  src={SignUpLogo}
+                  alt="form-logo"
+                ></img>
+                <div className="form-control">
+                  <label className="contact-name">Name:</label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={nameValue}
+                  ></input>
+                </div>
+                <div className="form-control">
+                  <label className="contact-name">Username:</label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    value={userName}
+                    onChange={userNameValue}
+                  ></input>
+                </div>
+                <div className="form-control">
+                  <label className="contact-name">Email:</label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    value={email}
+                    onChange={emailValue}
+                  ></input>
+                </div>
+                <div className="form-control">
+                  <label className="contact-name">Phone:</label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    value={phone}
+                    onChange={phoneValue}
+                  ></input>
+                </div>
+                <div className="form-control">
+                  <label className="contact-name">Website:</label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    value={website}
+                    onChange={websiteValue}
+                  ></input>
+                </div>
+                <div className="form-control">
+                  <label className="contact-name">Profession:</label>
+                  <input
+                    className="text-input"
+                    type="text"
+                    value={profession}
+                    onChange={professionValue}
+                  ></input>
+                </div>
+                <input className="create-button" type="submit" />
+              </form>
+            ) : null}
+            {form &&
+              form.length > 1 &&
+              form.map((user) => <div>{user.name}</div>)}
           </div>
         ))}
     </>

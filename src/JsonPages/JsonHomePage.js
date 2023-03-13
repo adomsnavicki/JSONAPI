@@ -29,7 +29,7 @@ const JsonHomePage = () => {
 
   return (
     <div>
-      <Title text="Share your moments!" />
+      <Title text="Share your moment!" />
       <UserCreator item={users} link={"/user/"} />
       <PostCreator item={posts} link={"/post/"} />
     </div>
