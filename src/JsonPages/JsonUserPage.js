@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import userLogo from "../Svg/user.svg";
 import "../Scss/user.scss";
@@ -11,8 +11,8 @@ const apiURL = `http://localhost:3000/`;
 const JsonUserPage = () => {
   let { id } = useParams();
   const [user, setUser] = useState();
+
   const [userAlbums, setUserAlbums] = useState();
-  const [userAlbumsImages, setAlbumsImages] = useState();
 
   useEffect(() => {
     axios.get(`${apiURL}users?id=${id}`).then((user) => {
@@ -22,9 +22,9 @@ const JsonUserPage = () => {
   }, [id]);
 
   useEffect(() => {
-    axios.get(`${apiURL}albumsImages?albumId=${id}`).then((user) => {
+    axios.get(`${apiURL}albums?albumId=${id}`).then((user) => {
       const userData = user.data;
-      setAlbumsImages(userData);
+      setUserAlbums(userData);
     });
   }, [id]);
 
@@ -63,12 +63,14 @@ const JsonUserPage = () => {
           </div>
         ))}
       <h1>Albums:</h1>
-      {userAlbumsImages &&
-        userAlbumsImages.length > 0 &&
-        userAlbumsImages.map((albums, index) => (
-          <div>
+      {userAlbums &&
+        userAlbums.length > 0 &&
+        userAlbums.map((albums, index) => (
+          <div key={index}>
             <div className="album-title">{albums.title}</div>
-            <img src={albums.url}></img>
+            <Link to={`/album/${albums.albumId}/${albums.id}`}>
+              <img src={albums.url} alt="album"></img>
+            </Link>
           </div>
         ))}
     </div>

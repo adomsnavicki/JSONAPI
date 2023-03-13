@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Title from "../Components/Title";
-import ContentCreator from "../Components/ContentCreator";
+import UserCreator from "../Components/UserCreator";
+import PostCreator from "../Components/PostCreator";
 
 const apiURL = `http://localhost:3000/`;
 
@@ -43,11 +44,9 @@ const JsonMainPage = () => {
   return (
     <div>
       <Title text="Share your moments!" />
-      {/* <ContentCreator item={posts} title="Posts:" link={"/posts/"} /> */}
-      <ContentCreator item={users} link={"/user/"} />
 
-      {/* <ContentCreator item={albums} title="Albums:" link={"/albums/"} />
-      <ContentCreator item={comments} title="Comments:" link={"/comments/"} /> */}
+      <UserCreator item={users} link={"/user/"} />
+      <PostCreator item={posts} link={"/posts/"} />
     </div>
   );
 };
