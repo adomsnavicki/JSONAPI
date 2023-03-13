@@ -6,7 +6,7 @@ import "../Scss/header.scss";
 const Header = () => {
   return (
     <nav className="main-navigation">
-      <NavLink to="/JSONAPI/">
+      <NavLink to="/home/">
         <img className="header-logo" src={HeaderLogo} alt="header-logo"></img>
       </NavLink>
 

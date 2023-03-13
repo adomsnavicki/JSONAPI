@@ -1,6 +1,6 @@
 import "./Scss/container.scss";
 import { Route, Routes } from "react-router-dom";
-import JsonMainPage from "./JsonPages/JsonMainPage";
+
 import JsonHomePage from "./JsonPages/JsonHomePage";
 import Header from "./Components/Header";
 import JsonPostsPage from "./JsonPages/JsonPostsPage";
@@ -17,7 +17,6 @@ function App() {
       <Header />
       <div className="container">
         <Routes>
-          <Route path="/JSONAPI" element={<JsonMainPage />} />
           <Route path="/home/" element={<JsonHomePage />} />
           <Route path="/users/" element={<JsonUsersPage />} />
           <Route path="/user/" element={<JsonUserPage />} />

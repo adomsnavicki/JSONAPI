@@ -10,18 +10,19 @@ const PostCreator = ({ item, link }) => {
           <h1 className="posts-image-title font-link">Posts</h1>
           <img className="posts-image" src={PostsImage} alt="posts-logo"></img>
         </div>
+        <div className="posts-link-wrapper">
+          {item &&
+            item.length > 0 &&
+            item.map((post, index) => (
+              <Link className="post-link" key={index} to={link + post.id}>
+                <div className="post-item">
+                  <h2 className="post-title">{post.title}</h2>
 
-        {item &&
-          item.length > 0 &&
-          item.map((post, index) => (
-            <Link className="post-link" key={index} to={link + post.id}>
-              <div className="post-item">
-                <h2 className="post-title">{post.title}</h2>
-
-                <span className="post-body">{post.body}</span>
-              </div>
-            </Link>
-          ))}
+                  <span className="post-body">{post.body}</span>
+                </div>
+              </Link>
+            ))}
+        </div>
       </div>
     </div>
   );
