@@ -8,6 +8,7 @@ import JsonUsersPage from "./JsonPages/JsonUsersPage";
 import JsonAlbumsPage from "./JsonPages/JsonAlbumsPage";
 import JsonUserPage from "./JsonPages/JsonUserPage";
 import JsonAlbumPage from "./JsonPages/JsonAlbumPage";
+import JsonPostPage from "./JsonPages/JsonPostPage";
 import "./Scss/content-wrapper.scss";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/user/" element={<JsonUserPage />} />
           <Route path="/user/:id" element={<JsonUserPage />} />
           <Route path="/posts/" element={<JsonPostsPage />} />
+          <Route path="/post/:id" element={<JsonPostPage />} />
           <Route path="/albums/" element={<JsonAlbumsPage />} />
           <Route path="/album/:id/:id" element={<JsonAlbumPage />} />
         </Routes>

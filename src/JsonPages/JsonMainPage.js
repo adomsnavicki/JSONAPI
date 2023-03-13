@@ -44,9 +44,8 @@ const JsonMainPage = () => {
   return (
     <div>
       <Title text="Share your moments!" />
-
       <UserCreator item={users} link={"/user/"} />
-      <PostCreator item={posts} link={"/posts/"} />
+      <PostCreator item={posts} link={"/post/"} />
     </div>
   );
 };
