@@ -21,6 +21,13 @@ const JsonPostPage = () => {
     return titleCase;
   }
 
+  const removeCommentHandler = (id) => {
+    fetch(`http://localhost:3000/comments/${id}`, {
+      method: "DELETE",
+    });
+    window.location.reload();
+  };
+
   useEffect(() => {
     axios.get(`${apiURL}posts/${id}?_embed=comments`).then((posts) => {
       const postsData = posts.data;
@@ -49,6 +56,9 @@ const JsonPostPage = () => {
             <div className="comment-wrapper" key={index}>
               <p className="comment-body">{comment.body}</p>
               <span className="comment-email">{comment.email}</span>
+              <button onClick={() => removeCommentHandler(comment.id)}>
+                Remove Comment
+              </button>
             </div>
           ))}
       </div>
