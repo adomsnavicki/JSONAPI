@@ -64,13 +64,28 @@ const SignUpFormButton = ({ text }) => {
     fetch(`${apiURL}users`, {
       method: "POST",
       body: JSON.stringify({
+        userId: 1,
         name: name,
         username: userName,
         email: email,
+        address: {
+          street: "Kattie Turnpike",
+          suite: "Suite 198",
+          city: "Lebsackbury",
+          zipcode: "31428-2261",
+          geo: {
+            lat: "-38.2386",
+            lng: "57.2232",
+          },
+        },
         phone: phone,
         website: website,
+        company: {
+          name: "Hoeger LLC",
+          catchPhrase: "Centralized empowering task-force",
+          bs: "target end-to-end models",
+        },
         profession: profession,
-        userId: 1,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
