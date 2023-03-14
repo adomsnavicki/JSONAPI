@@ -1,0 +1,9 @@
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  .album-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

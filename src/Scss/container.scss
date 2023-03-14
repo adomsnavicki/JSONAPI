@@ -1,14 +1,6 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 .container {
   max-width: 1230px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

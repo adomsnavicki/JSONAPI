@@ -1,0 +1,46 @@
+.register-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  border-radius: 39px;
+  background-color: rgb(155, 209, 223);
+
+  box-shadow: 15px 15px 100px #707070, -15px -15px 100px #ffffff;
+  .form-control {
+    display: flex;
+    flex-direction: column;
+  }
+  .text-input {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .sign-up-logo {
+    width: 400px;
+    height: 100px;
+  }
+  .create-button {
+    padding: 10px;
+    margin-top: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .close-form-button {
+    width: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

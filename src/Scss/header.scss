@@ -1,9 +1,13 @@
 .main-navigation {
   display: flex;
-  flex-direction: column;
-  border: 1px solid red;
-
+  justify-content: space-between;
   align-items: center;
+  background-color: rgb(155, 209, 223);
+  position: sticky;
+  top: 0;
+  .header-logo {
+    width: 60px;
+  }
   .nav-list {
     display: flex;
     flex-direction: row;
@@ -13,8 +17,17 @@
   }
   .nav-item {
     a {
+      padding: 20px;
       text-decoration: none;
       color: black;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    a:hover {
+      color: white;
+    }
+    a.active {
+      color: white;
     }
   }
 }
