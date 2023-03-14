@@ -3,5 +3,17 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
+    background-color: aliceblue;
   }
+  .list-wrapper {
+    background-color: beige;
+    width: 400px;
+    height: 300px;
+    border-radius: 59px;
+    background: linear-gradient(225deg, #6fcbdd, #5eabba);
+    box-shadow: -5px 5px 10px #2a4c53, 5px -5px 10px #a6ffff;
+  }
+}
+.container-content {
+  background-color: aliceblue;
 }

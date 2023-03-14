@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import userLogo from "../Svg/user.svg";
+import albumLogo from "../Svg/album.svg";
 import "../Scss/user.scss";
 
 const apiURL = `http://localhost:3000/`;
@@ -69,7 +70,7 @@ const JsonUserPage = () => {
           <div key={index}>
             <div className="album-title">{albums.title}</div>
             <Link to={`/album/${albums.albumId}/${albums.id}`}>
-              <img src={albums.url} alt="album"></img>
+              <img src={albumLogo} alt="album"></img>
             </Link>
           </div>
         ))}
