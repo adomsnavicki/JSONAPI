@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import "../Scss/signUpForm.scss";
 import SignUpLogo from "../Svg/SignUpLogo.svg";
-
 import "../Scss/button.scss";
+
+const apiURL = `http://localhost:3000/`;
+
 const Button = ({ text }) => {
   let DataObj = {
     name: "",
@@ -58,6 +60,25 @@ const Button = ({ text }) => {
       website: website,
       profession: profession,
     };
+
+    fetch(`${apiURL}users`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: name,
+        username: userName,
+        email: email,
+        phone: phone,
+        website: website,
+        profession: profession,
+        userId: 1,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+
     setForm((prev) => [DataObj, ...prev]);
 
     setShow(false);
@@ -146,9 +167,6 @@ const Button = ({ text }) => {
                 <input className="create-button" type="submit" />
               </form>
             ) : null}
-            {form &&
-              form.length > 1 &&
-              form.map((user) => <div>{user.name}</div>)}
           </div>
         ))}
     </>
