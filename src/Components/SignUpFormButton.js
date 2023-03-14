@@ -179,6 +179,7 @@ const SignUpFormButton = ({ text }) => {
                     onChange={professionValue}
                   ></input>
                 </div>
+
                 <input className="create-button" type="submit" />
               </form>
             ) : null}
