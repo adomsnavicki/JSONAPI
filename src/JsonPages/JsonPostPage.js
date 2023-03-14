@@ -22,7 +22,7 @@ const JsonPostPage = () => {
   }
 
   const removeCommentHandler = (id) => {
-    fetch(`http://localhost:3000/comments/${id}`, {
+    fetch(`${apiURL}comments/${id}`, {
       method: "DELETE",
     });
     window.location.reload();
