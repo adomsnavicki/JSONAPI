@@ -6,7 +6,7 @@ import "../Scss/button.scss";
 
 const apiURL = `http://localhost:3000/`;
 
-const Button = ({ text }) => {
+const SignUpFormButton = ({ text }) => {
   let DataObj = {
     name: "",
     username: "",
@@ -173,4 +173,4 @@ const Button = ({ text }) => {
   );
 };
 
-export default Button;
+export default SignUpFormButton;
