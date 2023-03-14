@@ -1,7 +1,38 @@
 .user-wrapper {
   display: flex;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  .user-contacts {
+    list-style-type: none;
+    font-weight: bold;
+  }
 }
-.album-title {
-  font-size: 20px;
-  text-transform: uppercase;
+
+.user-albums-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+}
+.user-albums-wrapper {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+  .album-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 200px;
+    font-weight: bold;
+  }
+  .user-albums-logo {
+    width: 300px;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
 }

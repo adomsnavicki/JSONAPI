@@ -12,7 +12,6 @@ const apiURL = `http://localhost:3000/`;
 const JsonUserPage = () => {
   let { id } = useParams();
   const [user, setUser] = useState();
-
   const [userAlbums, setUserAlbums] = useState();
 
   useEffect(() => {
@@ -41,20 +40,20 @@ const JsonUserPage = () => {
             <div className="user-content">
               {" "}
               <h1>{user.name}</h1>
-              <ul>
+              <ul className="user-contacts">
                 Contacts:
                 <li>Email: {user.email}</li>
                 <li>Phone: {user.phone}</li>
                 <li>Website: {user.website}</li>
               </ul>
-              <ul>
+              <ul className="user-contacts">
                 Address:
                 <li>Street: {user.address.street}</li>
                 <li>Suite: {user.address.suite}</li>
                 <li>City: {user.address.city}</li>
                 <li>Zipcode: {user.address.zipcode}</li>
               </ul>
-              <ul>
+              <ul className="user-contacts">
                 Company:
                 <li>Name: {user.company.name}</li>
                 <li>CatchPhrase: {user.company.catchPhrase}</li>
@@ -63,14 +62,18 @@ const JsonUserPage = () => {
             </div>
           </div>
         ))}
-      <h1>Albums:</h1>
+      <h1 className="user-albums-title">Albums:</h1>
       {userAlbums &&
         userAlbums.length > 0 &&
         userAlbums.map((albums, index) => (
-          <div key={index}>
+          <div className="user-albums-wrapper" key={index}>
             <div className="album-title">{albums.title}</div>
             <Link to={`/album/${albums.albumId}/${albums.id}`}>
-              <img src={albumLogo} alt="album"></img>
+              <img
+                className="user-albums-logo"
+                src={albumLogo}
+                alt="album"
+              ></img>
             </Link>
           </div>
         ))}

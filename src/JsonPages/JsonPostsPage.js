@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PostCreator from "../Components/PostCreator";
-import "../Scss/postsPage.scss";
 
 const apiURL = `http://localhost:3000/`;
 const JsonPostsPage = () => {

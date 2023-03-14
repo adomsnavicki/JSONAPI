@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+import "../Scss/postPage.scss";
 const apiURL = `http://localhost:3000/`;
 
 const JsonPostPage = () => {
@@ -42,14 +42,16 @@ const JsonPostPage = () => {
           </div>
         ))}
       <h2>Comments:</h2>
-      {comments &&
-        comments.length > 0 &&
-        comments.map((comment, index) => (
-          <div className="comment-wrapper" key={index}>
-            <p className="comment-body">{comment.body}</p>
-            <span className="comment-email">{comment.email}</span>
-          </div>
-        ))}
+      <div className="comments-container">
+        {comments &&
+          comments.length > 0 &&
+          comments.map((comment, index) => (
+            <div className="comment-wrapper" key={index}>
+              <p className="comment-body">{comment.body}</p>
+              <span className="comment-email">{comment.email}</span>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
