@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "./Button";
+import SignUpFormButton from "./SignUpFormButton";
 import "../Scss/title.scss";
 const Title = ({ text }) => {
   return (
     <div className="title-wrapper">
       <h1 className="title-text font-link">{text}</h1>
-      <Button text="Sign Up" />
+      <SignUpFormButton text="Sign Up" />
     </div>
   );
 };
